@@ -83,7 +83,7 @@ class Admin:
     
     def update_sell_rate(self,data):
         _id = data["_id"]
-        rate = data["rate"]
+        rate = float(data["rate"])
         table = "sell_card"
         trx = self.database.update_rate(_id,rate,table)
         if trx:
@@ -95,7 +95,7 @@ class Admin:
     
     def update_buy_rate(self,data):
         _id = data["_id"]
-        rate = data["rate"]
+        rate = float(data["rate"])
         table = "buy_card"
         trx = self.database.update_rate(_id,rate,table)
         if trx:
